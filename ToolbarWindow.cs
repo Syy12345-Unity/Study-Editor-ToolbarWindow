@@ -10,6 +10,8 @@ public class ToolbarWindow : EditorWindow {
         GetWindow<ToolbarWindow>();
     }
 
+    int popup = 0;
+
     void OnGUI()
     {
         var backgroundRect = new Rect(
@@ -29,6 +31,7 @@ public class ToolbarWindow : EditorWindow {
 
             GUILayout.Label("Toolbar Name");
             GUILayout.FlexibleSpace();
+            popup = EditorGUILayout.Popup(popup, new string[] { "Hoge", "Fuga", "Piyo" }, EditorStyles.toolbarPopup,GUILayout.Width(100));
             if (GUILayout.Button("Button 1", EditorStyles.toolbarButton))
             {
 
